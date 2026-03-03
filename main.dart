@@ -1,0 +1,118 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.teal,
+        body: SafeArea(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: AssetImage("images/profile.jpg"),
+                ),
+
+                const SizedBox(height: 10),
+
+                // NAMA (tanpa Container)
+                Text(
+                  "Aurelia Sophia",
+                  style: GoogleFonts.pacifico(
+                    fontSize: 40,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+
+                // JOB (tanpa Container)
+                Text(
+                  "Graphic Designer",
+                  style: GoogleFonts.sourceSans3(
+                    fontSize: 20,
+                    color: Colors.teal.shade100,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 2.5,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+
+                SizedBox(
+                  height: 20,
+                  width: 150,
+                  child: Divider(
+                    color: Colors.teal.shade100,
+                  ),
+                  ),
+
+                // PHONE
+                Container(
+                  padding:  EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5),
+                  ),
+                  margin:  EdgeInsets.symmetric(
+                    vertical: 10,
+                    horizontal: 25,
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.phone, color: Colors.teal),
+                      SizedBox(width: 10),
+                      Text(
+                        "0857 1122 3457",
+                        style: GoogleFonts.sourceSans3(
+                          fontSize: 20,
+                          color: Colors.teal.shade900,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                 // EMAIL
+                Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5),
+                  ),
+                  margin: EdgeInsets.symmetric(
+                    vertical: 10,
+                    horizontal: 25,
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.email, color: Colors.teal),
+                      SizedBox(width: 10),
+                      Text(
+                        "aureliasophia@gmail.com",
+                        style: GoogleFonts.sourceSans3(
+                          fontSize: 20,
+                          color: Colors.teal.shade900,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
